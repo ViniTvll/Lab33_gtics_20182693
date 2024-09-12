@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Empleado</title>
+</head>
+<body>
+<h1>Información del Empleado</h1>
+
+<p><strong>Nombre:</strong> <span th:text="${receta.nombre}"></span></p>
+<p><strong>Tiempo de Preparación:</strong> <span th:text="${receta.tiempo_preparacion}"></span></p>
+<p><strong>Categoria:</strong> <span th:text="${receta.categoria}"></span></p>
+<p><strong>Ingredientes:</strong> <span th:text="${receta.ingredientes}"></span></p>
+<p><strong>Nutricion:</strong> <span th:text="${receta.nutricion}"></span></p>
+
+<p><strong>Ingredientes:</strong></p>
+<select name="ingrediente">
+    <option th:each="ingrediente : ${listaIngredientes}" th:value="${ingrediente.ingredienteId}" th:text="${ingrediente.nombreIngrediente}"></option>
+</select>
+
+<br><br>
+<button onclick="window.history.back()">Regresar</button>
+</body>
+</html>
